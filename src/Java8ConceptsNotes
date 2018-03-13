@@ -1,7 +1,7 @@
 Concepts:-
 ==========
 
-1)  Lambda Expressions
+1)  Lambda Expressions-->>Lambda expression facilitates functional programming, and simplifies the development a lot.
 2)  Method references
 3)  Stream API
 4)  Generics/Collections
