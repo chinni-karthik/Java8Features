@@ -11,3 +11,81 @@ Concepts:-
 8)  Compact Profiles
 9)  Improvements in java.lang and java.util Packages
 10) Other tools , JavaDoc API and Security
+
+-------------------------------------------------
+
+Java-8 learning from JavaBrains:
+1- Until java 7, we code basically in Object oriented way in java.
+   But, now with the advent of lambda expressions, we can write code in functional programming.
+   This is a paradigm shift totally.
+   We can write simple, concise and readable code using this lambds.
+2- What are the problems in OOP that functional programming solve? How are the solved in java-8?
+   In OOP everything is an object. If you just need a functionality, you need to create a class and have that method in it.
+   This has no problems whatsoever.
+   say, we have greet() and greet has to do different things based on the input it has.
+   We do this in java 7 by passing the object of GreetingInterface. We can make perform() do different things by passing different implementations of GreetingInterface.
+   This is a classic OOP , with polymorphism in action.
+   
+   Need to note here that what we are doing in above example is that change the functionality of greet() by passing different implementations of of interface.
+   What if we can directly pass the action that greet() needs to do?
+   Wouldn't that be great?well, yes.. we can do that using java-8.
+   The above function can be assigned to a variable. (function here is doing some action). Here we are assigning the piece of code to the variable.
+   Note that here the value of variable is not the execution result  the piece of code. But, it is the block of code itself!!!
+   
+   Steps to create lambda expression:-
+   1-take the method you generally write.
+   2-remove the access modifier,return type and method name.
+   3-now you are left with parameters inside paranthesis and method body that does something.
+   4-Thats it...!!!
+   5-as a final step, just add -> between parameters and paranthesis.
+   
+   Great dude...!
+   
+   public void perform(){
+   		SOP("HelloWorld...!!!");
+   }
+   
+   above code becomes below in java 8:
+   
+   var=()->{
+	   		SOP("Hello World...!!!");
+	   }
+	   
+   If you need to write lambda expression, you need to know how to write a method which you already know dude...!!!
+ 
+3- Now the question is , What is the type of the variable? One more question is how do you execute that variable?
+   The type of the variable is of the type of an interface you need to create explicitly.
+   How do we do that?
+   Just create an interface with the same signature that the above lambda expression. i.e. in above you learnt how to get a lambda expression from a method.
+   Here you just need to create an interface and write that method with no implementation to it.
+   Thats it...!!!
+   This is called as a functional interface dude...!!!
+
+4- Note the fact that even though lambda expression does the same thing with ananymous inner class, but in a different syntax, we need to remember that lambda expressions dont do the same things an ananymous inner classes do actually.
+	
+5- Note that you need not specify the input type in the left hand side inside () , as the compiler goes and checks that in the functional interface!!
+   
+6- Thread creation differences:
+   com.ck.java8.misc.ThreadCreation7vs8.java
+   
+7- Functional interface:
+   If interface has only one abstract method then it is called Functional interface.
+   Note that in java 8, we can have the interfaces with methods having implementations.
+8- What you need some generic conditions to test like print only if length is 2.
+   In such a case, you need to create an interface , say Condition and have a method say test().
+   so, you can use this for passing lambda expressions as arguments.
+   One point to note here is that, for every of such small requirements, if you need to create interfaces, it not good for java.
+   so, there are a few out of the box interfaces created that let you simply re-use them.
+   They are present in java.util.functions package.
+9- you can use Predicate if you need some boolean condition.
+   You can use Function if you need to return the object of some type.
+10-Looping over collections:- till java 7, we iterate using external iterators. for loop and for each loop come to this category.
+   Java-8 uses internal iterators.
+   list.forEach(System.out::println);
+
+   Use streams:
+   
+11-Streams analogy of converir belt...!!!
+
+   
+Note:- you can learn :: method references.
